@@ -64,7 +64,7 @@ export default function FavoritesProvider({ children }: { children: React.ReactN
   const toggleFavorite = useCallback(
     async (listingId: string) => {
       if (!isAuthenticated) {
-        window.location.href = '/login'
+        window.location.href = '/auth/login'
         return
       }
 

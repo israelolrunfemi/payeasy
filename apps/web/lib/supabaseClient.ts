@@ -11,7 +11,8 @@ export function createClient() {
        console.warn('Supabase environment variables missing during build. Using placeholders.')
        return createBrowserClient('https://placeholder.supabase.co', 'placeholder')
     }
-    throw new Error('Missing Supabase environment variables')
+    console.warn('⚠️ Missing Supabase environment variables. Auth features will not work.')
+    return createBrowserClient('https://placeholder.supabase.co', 'placeholder')
   }
 
   return createBrowserClient(supabaseUrl, supabaseAnonKey)
